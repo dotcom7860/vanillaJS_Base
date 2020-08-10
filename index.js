@@ -75,7 +75,7 @@ function handleClick(){
 }
 
 title.addEventListener("click",handleClick);
-*/
+
 //if else
 if(10 === 10){
   console.log("hi");
@@ -91,3 +91,58 @@ if(age >= 18 && age <= 21){
 }else{
   console.log("too young.");
 }
+
+const title = document.querySelector("#title");
+
+const BASE_COLOR = "white";
+const OTHER_COLOR = "#2f3542";
+
+function handleClick(){
+  const currentColor = title.style.color;
+  console.log(currentColor);
+  if(currentColor === BASE_COLOR){
+    title.style.color = OTHER_COLOR;
+  }else{
+    title.style.color = BASE_COLOR;
+  }
+}
+
+function init(){
+  title.style.color = BASE_COLOR;
+}
+
+init();
+title.addEventListener("mouseenter",handleClick);
+
+//javascript dom event MDN
+function handleOffline(){
+  console.log("Bye bye");
+}
+function handleOnline(){
+  console.log("Hi NetWork!");
+}
+window.addEventListener("offline",handleOffline);
+window.addEventListener("online",handleOnline);
+*/
+
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick(){
+  title.classList.toggle(CLICKED_CLASS);
+  //↓ write in detailed.
+  /*
+  const hasClass = title.classList.contains(CLICKED_CLASS);
+  if(hasClass){
+    title.classList.remove(CLICKED_CLASS);
+  }else{
+    title.classList.add(CLICKED_CLASS);
+  }
+  */
+}
+
+function init(){
+  title.addEventListener("click",handleClick);
+}
+init();
