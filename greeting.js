@@ -26,7 +26,7 @@ function paintGreeting(text){
     greeting.classList.add(SHOWING_CN);
     greeting.innerText = `Hello ${text}`;
 }
-
+//localStorage() === 브라우저 상에 정보를 저장할 수 있음
 function loadName(){
     const currentUser = localStorage.getItem(USER_LS);
     if(currentUser === null){
