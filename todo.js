@@ -5,7 +5,7 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 const TODOS_LS = 'toDos';
 
 let toDos = [];
-
+//filter(return에 해당하는(조건에 맞는) 값만 리턴)
 function deleteToDo(event){
     const btn = event.target;
     const li = btn.parentNode;
@@ -16,11 +16,12 @@ function deleteToDo(event){
     toDos = cleanToDos;
     saveToDo();
 }
-
+//JSON(javaScript object Notation) = string을 object로, object를 string으로
 function saveToDo(){
     localStorage.setItem(TODOS_LS,JSON.stringify(toDos));
 }
-
+//createElement = 원소를 만든다.
+//appendChild = 해당 원소 안에 값을 추가한다.
 function paintTodo(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
@@ -47,7 +48,7 @@ function handleSubmit(event){
     paintTodo(currentValue);
     toDoInput.value = "";
 }
-
+//forEach = array에 있는 값들을 한번씩 출력
 function loadToDos(){
     const loadToDos = localStorage.getItem(TODOS_LS);
     if(loadToDos !== null){
